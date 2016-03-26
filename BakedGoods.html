@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Richies Buns</title>
+
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap-theme.min.css">
+<link rel="stylesheet" type="text/css" href="css/home.css"> <!-- this my css file . I put it here override the bootstrap style sheets  -->
+<script type="text/javascript" src="http://code.jquery.com/jquery.min.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js">  </script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">  <!--was having problems making the website responsive on my mobile
+    added this to make it work  -->
+<script type="text/javascript">
+function calcCake(sel) {               //place argument sel in function .
+  sel.form.cakeTotal.value =((sel.value * sel.form.cakePrice.value)*100)/100;  
+  /*cakeTotal.value in the select form is equal to the option value (1-10) multiplied by the cakeProce value . 
+  Multiplied the total by 100 and then divided by a 100 too round off the figure too 2 decimal place . For some reason i was getting many
+   numbers after the decimal places eg 7.6734923485 */
+  }
+</script>
+  
+
+</head>
+
+<body>
+      <div id="logo"> <!-- This is my logo   -->
+        <div class="row-fluid">
+      
+    <a href="home3.html">     <!--  link back to homepage -->      
+           <img class="img-responsive" src="images/logo7.png" alt="header"  /><!--  make logo responsive  -->
+       </a>
+   </div>
+       </div>
+
+        <nav id="myNavbar" class="navbar navbar-default" role="navigation"> <!-- Dafault Navbar from bootstrap -->
+        <div class="container-fluid" id:"fullNav">  <!--i used container fluid to make the page fuller , i took inspiration from another site called http://www.blanco-nino.com/#about-1 which looks great on all screens  -->
+        <div class="navbar-header">
+        <button class="navbar-toggle" data-target="#navbarCollapse" data-toggle="collapse" type="button"> <!--Data is an HTML5 data attribute that automatically hooks up the element to the type of widget it is.-->
+        <span class="sr-only">Toggle navigation</span> <!-- The <span> tag provides a way to add a hook to a part of a text or a part of a document. -->
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        <span class="icon-bar"> </span>
+        </button>
+        
+  
+    </div>
+    
+    <div id="navbarCollapse" class="collapse navbar-collapse"> <!-- Navbar collapse makes the navbar close on smaller screens  -->
+    <ul class=" nav navbar-nav navbar-left"> <!-- moves the navbar to the left  -->
+    <li>
+         
+
+<li>
+         <li class="dropdown">                 <!--Dropdown with an unorder list to arrange my navbar better and not clutter it up  -->
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Shop<b class="caret"></b></a>
+            <ul class="dropdown-menu">
+                <li><a href="buns.html">Buns</a></li> <!-- a href is the hyperlink tag , allows me to link all the pages -->
+                <li><a href="Cakes.html">Cakes</a></li>
+                <li><a href="BakedGoods.html">Baked Goods </a></li>
+              
+            </ul>
+        </li>
+
+<li>
+<a target="_blank" href="">News</a>
+</li>
+<li>
+    <a target="" href="recipes.html">Recipes</a><!-- a href is the hyperlink tag , allows me to link all the pages -->
+</li>
+ <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">About Us<b class="caret"></b></a>
+            <ul class="dropdown-menu"> <!--Dropdown with an unorder list to arrange my navbar better and not clutter it up  -->
+                <li><a href="AboutUs.html">About Us</a></li>
+                <li><a href="ContactUs.html">Contact Us</a></li>
+              
+            </ul>
+        </li>
+</ul>
+    <div class="bs-example pull-right">   <!-- pulls the button to the right of the navbar  -->
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#loginModal" class="btn btn-lg btn-custom" data-toggle="modal">Sign in / Register</a> <!-- gave it a class of btn-custom to change the colour -->
+    
+    <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true"> <!-- the modal will fade out the rest of the webite and pop out -->
+  <div class="modal-dialog">
+  <div class="modal-content">
+      <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><!-- closes window -->
+          <h1 class="text-center">Login</h1> <!-- align text to center-->
+      </div>
+      <div class="modal-body">
+          <form name="form1" method="post" action="php/checklogin.php">  <!--the form data is sent for processing to a PHP file named "checklogin.php". The form data is sent with the HTTP POST method. -->
+          <form class="form col-md-12 center-block"> <!-- make form grid size 12 columns within the modal  -->
+            <div class="form-group">       
+              <input type="text" name="myusername" id="myusername" class="form-control input-lg" placeholder="username"><!-- these ids are important 
+                  as they are used within the php file  -->
+            </div>
+            <div class="form-group"> <!-- input type password will hide what the user is typying with *** , placeholder is the faded text you see before you input data-->
+              <input type="password" name="mypassword" id="mypassword" class="form-control input-lg" placeholder="Password">
+            </div>
+            <div class="form-group">
+              <button class="btn btn-primary btn-lg btn-block">Sign In</button> <!--this bitton sign you in , class vtn-lg makes the button large -->
+              <span class="pull-right"><a href="registration.html">Register</a></span><span><a href="#">Need help?</a></span> <!-- Goes to registration page  -->
+            </div>
+            </form>
+          </form>
+      </div>
+      <div class="modal-footer"> 
+          <div class="col-md-12">
+          <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button> <!-- close the modal -->
+          </div>    
+      </div>
+  </div>
+  </div>         
+</div>
+    
+            </div>    
+            </div>
+        
+    </nav>  <!-- END OF NAV BAR -->
+     <div class="container-fluid">
+  <div class="row">
+            <div class="col-xs-12" id="storeHeadings">
+                <h1>Baked Goods </h1>
+                <p>Mei cu partiendo intellegat. At pericula incorrupte persequeris ius. Sale eripuit utroque eos eu, sea ei consul molestiae constituam, mei at wisi suavitate incorrupte. Paulo mentitum eam ei, mei ei populo recusabo. Id vel epicuri nostrum, omnium intellegam ne sea, ex velit inermis petentium mel. Sed et dicta nobis, mea ei facer populo.</p>
+    </div>
+   </div>
+  </div>                  
+    
+    
+    <div class="container-fluid">
+    <div class="row">
+     
+  <div class="col-xs-12 col-sm-6 col-md-4">  <!-- 12 columns on a very small screen (phone) , 6 columns on a medium sized screen (tablets) 4 on a large (laptops or anything bigger )-->
+    <div class="thumbnail"> <!-- used thumbnails to seperate each item for sell in a neat fashion -->
+      <img src="images/bakedgoods1cookiechamucos.jpg" alt="..."> <!-- resized all the images 1600*1200 externally rather then using css , to maintain the image quality -->  
+      <div class="caption"> <!-- adds text under the image -->
+        <h3>Cookie Chamucos</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum 
+            evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+              <p> <br> Item Price: €3  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=3 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+        
+ <!-- DUPLICATE THIS FOR AS MANY THUMBNAILS AS YOU WISH , IN THIS CASE ITS 9 . THE REST OF THIS CODE IS JUST DUPLICATED WITH DIFFERENT IMAGES AND VALUES -->
+  
+  <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoodscookiecherry.jpg" alt="...">
+      <div class="caption">
+        <h3>Cherry Cookies</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur 
+            prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+          <p> <br> Item Price: €1.50  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=1.50 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+<div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods3brownie.jpg" alt="...">
+      <div class="caption">
+        <h3>Brownies </h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, 
+            vim admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+         <p> <br> Item Price: €2.50 <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=2.50 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+ 
+  
+  <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+     <img src="images/bakedgoods4muffin.jpg" alt="...">
+      <div class="caption">
+        <h3>Richie's Muffins</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim 
+            admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+          <p> <br> Item Price: €1.75  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=1.75 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+  
+ <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods5doughnuts.jpg" alt="...">
+      <div class="caption">
+        <h3>Richie's Dounghnuts </h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim 
+            admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+         <p> <br> Item Price: €1.25 <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=1.25 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+  
+ <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods6pretzel.jpg" alt="...">
+      <div class="caption">
+        <h3>Pretzels</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu, an vidit scripta
+             nec. Cu idque putant pri, sint temporibus ei vim.</p>
+         <p> <br> Item Price: €1.40  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=1.40 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+  
+ <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods7bakewelltarts.jpg" alt="...">
+      <div class="caption">
+        <h3>Bakewell Tarts</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu, an vidit scripta nec.
+             Cu idque putant pri, sint temporibus ei vim.</p>
+         <p> <br> Item Price: €2.50  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=2.50 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+  
+   <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods8croissants.jpg" alt="...">
+      <div class="caption">
+        <h3>Richie's Croissants</h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, 
+            vim admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+         <p> <br> Item Price: €1.00  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=1 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-4"> 
+    <div class="thumbnail">
+      <img src="images/bakedgoods9bakedbread.jpg" alt="...">
+      <div class="caption">
+        <h3> Richie's Famous Baked Bread  </h3>
+        <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu,
+             an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim.</p>
+          <p> <br> Item Price: €2.20  <!-- Display item price ,cakeProce should match this  -->
+            <form>
+<select name="numCake" id="numCake" onChange="calcCake(this);"> <!-- when user selects quantity run the javascript calcCake to calculate price -->
+   
+<option value=0>Select Quantity</option>    <!-- give this a value of 0 as you dont want it to calculate anything , display select quantity -->
+<option value=1>1 </option>     <!-- give this a value of 1 and display 1 , and so on -->   
+<option value=2>2 </option>
+<option value=3>3 </option>
+<option value=4>4 </option>
+<option value=5>5 </option>
+<option value=6>6 </option>
+<option value=7>7 </option>
+<option value=8>8 </option>
+<option value=9>9 </option>
+<option value=10>10 </option>
+<option value=10>10+ </option>
+</select>
+<input type="hidden" name="cakePrice" id="cakePrice" value=2.2 /> <!-- choose the value of the cake price . This should match the item price-->
+€<input type="text" name="cakeTotal" id="cakeTotal" value="" /> <!-- Display the cake total , calculated from the javascript  -->
+</form>
+ <a href="ContactUs.html" class="btn btn-default" role="button">Order</a></p> <!-- Brings you to the contact us page  -->
+      </div>
+    </div>
+  </div>
+
+      
+</div>
+</div>
+   
+</body>

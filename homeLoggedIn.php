@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['myusername'])){ // Check if session is not registered, redirect back to main page. 
+header("location:home3.html");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +26,7 @@
 <body>
       <div id="logo"> <!-- this my my logo   -->
         <div class="row-fluid">
-      
+      	
     <a href="home3.html">       <!--  link back to homepage -->  
            <img class="img-responsive" src="images/logo7.png" alt="header"  /><!--  make logo responsive  -->
 
@@ -40,15 +46,21 @@
         <span class="icon-bar"> </span>
         </button>
         
-  
+        
     </div>
     
     <div id="navbarCollapse" class="collapse navbar-collapse"> <!-- Navbar collapse makes the navbar close on smaller screens  -->
     <ul class=" nav navbar-nav navbar-left"> <!-- moves the navbar to the left  -->
     <li>
          
-
 <li>
+    <a target="" href="recipes.html">Hello <?php 
+
+    if($_SESSION['myusername']) echo $_SESSION['myusername'];
+
+    else echo "Username not set";?>   </a>
+</li>
+
          <li class="dropdown">                 <!--Dropdown with an unorder list to arrange my navbar better and not clutter it up  -->
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Shop<b class="caret"></b></a>
             <ul class="dropdown-menu">
@@ -60,7 +72,7 @@
         </li>
 
 <li>
-<a target="_blank" href="">News</a>
+</a>
 </li>
 <li>
     <a target="" href="recipes.html">Recipes</a>
@@ -74,32 +86,27 @@
             </ul>
         </li>
 </ul>
-    <div class="bs-example pull-right">   <!-- pulls the button to the right of the navbar  -->
+    <div class="bs-example pull-right">
+    	 <!-- pulls the button to the right of the navbar  -->	 
+    	 </div>
+  
+  <div class="bs-example pull-right">
     <!-- Button HTML (to Trigger Modal) -->
-    <a href="#loginModal" class="btn btn-lg btn-custom" data-toggle="modal">Sign in / Register</a> <!-- gave it a class of btn-custom to change the colour -->
+    <a href="#loginModal" class="btn btn-lg btn-custom" data-toggle="modal">Logout</a> <!-- gave it a class of btn-custom to change the colour -->
     
      <div id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog">
   <div class="modal-content">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-          <h1 class="text-center">Login</h1>
+          <h1 class="text-center">Logout</h1>
       </div>
-      
       <div class="modal-body">
-          <form name="form1" method="post" action="php/checklogin.php">  <!--the form data is sent for processing to a PHP file named "checklogin.php". The form data is sent with the HTTP POST method. -->
+          <form name="form1" method="post" action="php/logout.php">  <!--the form data is sent for processing to a PHP file named "checklogin.php". The form data is sent with the HTTP POST method. -->
           <form class="form col-md-12 center-block"> <!-- make form grid size 12 columns within the modal  -->
-            <div class="form-group">       
-              <input type="text" name="myusername" id="myusername" class="form-control input-lg" placeholder="username"><!-- these ids are important 
-                  as they are used within the php file  -->
-            </div>
-            <div class="form-group"> <!-- input type password will hide what the user is typying with *** , placeholder is the faded text you see before you input data-->
-              <input type="password" name="mypassword" id="mypassword" class="form-control input-lg" placeholder="Password">
-            </div>
+         
             <div class="form-group">
-              <button class="btn btn-primary btn-lg btn-block">Sign In</button>
-              <span class="pull-right"><a href="registration.html">Register</a></span><span><a href="#">Need help?</a></span>
-            </div>
+              <button class="btn btn-primary btn-lg btn-block">Click here to logout</button>
             </form>
           </form>
       </div>
@@ -111,7 +118,7 @@
   </div>
   </div>
 </div>
-    
+    </div>
             </div>    
             </div>
         
@@ -151,16 +158,17 @@
     </div>
   </div>
  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">  <!-- left and right buttons -->
-    <span class="glyphicon glyphicon-chevron-left"> </span>
+    <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"> </span>
+    <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
     </div>
    </div>
    </div>
 </div>
    
+</div>
 
 <div id="WelcomeHeading" class="title-desc-inner">
 <h1> Welcome to Richie's Buns </h1>
@@ -183,27 +191,24 @@ Per ei saperet perfecto oportere, postea expetendis vituperata et eos. Possit mo
                     </div>
                     
             </div>
-     </div>     
+          
     </div>
     <div class="container-fluid" id="bottomSection"> <!-- some id i havent applied any css too , i did this so could easily change the design my website if needed at a later date -->
 <div class="row">
             <div class="col-md-4"> <!-- makes the grid size 4 columns wide on a medium screen , these will stack on top of each other on a smaller screens  -->
-             <a target="" href="buns.html"><h2>Buns</h2></a>  
+                <h2>Buns</h2>
                 <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim. Ei quis cotidieque sea, sale illum debet qui no. Everti mnesarchum ea sed,.</p>
-                <img src="images/buns11_250x250.jpg" alt="" class="img-responsive img-circle">
-       
+                <p><a href="http://www.tutorialrepublic.com/html-tutorial/" target="_blank" class="btn btn-success">Check it out  &raquo;</a></p>
             </div>
            <div class="col-md-4">
-                <a target="" href="Cakes.html"><h2>Cakes</h2></a>
+                <h2>Cakes</h2>
                 <p> d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim. Ei quis cotidieque sea, sale illum debet qui no. Everti mnesarchum ea sed,</p>
-                <img src="images/cake5frenchpastries250x250.jpg" alt="" class="img-responsive img-circle">
-       
+                <p><a href="" target="_blank" class="btn btn-success">Yum &raquo;</a></p>
             </div>
             <div class="col-md-4">
-                <a target="" href="BakedGoods.html"><h2>Baked Goods </h2></a>
+                <h2>Biscuits</h2>
                 <p>d sit tation viderer persequeris. Verear habemus ius ex, vim admodum evertitur prodesset eu, an vidit scripta nec. Cu idque putant pri, sint temporibus ei vim. Ei quis cotidieque sea, sale illum debet qui no. Everti mnesarchum ea sed,.</p>
-                <img src="images/bakedgoods4muffin250x250.jpg" alt="" class="img-responsive img-circle">
-               
+                <p><a href="" target="_blank" class="btn btn-success">Take a look &raquo;</a></p>
             </div>
         </div>
 </div>
